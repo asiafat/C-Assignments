@@ -1,0 +1,297 @@
+/*1.	Write a Simple console Application Calculator with the help of Visual Studio .NET IDE which will perform following operations on two numbers:
+a.	Addition.
+b.	Subtraction.
+c.	Multiplication.
+d.	Division */
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HighestMarks
+{
+    internal class Program
+    {
+    static void Main(string[] args)
+    {
+        int num1,num2;
+        Console.WriteLine("Console Calculator in C#\r");
+    Console.WriteLine("------------------------\n");
+
+    
+    Console.WriteLine("Type a number, and then press Enter");
+    num1 = Convert.ToInt32(Console.ReadLine());
+
+    
+    Console.WriteLine("Type another number, and then press Enter");
+    num2 = Convert.ToInt32(Console.ReadLine());
+
+    
+    Console.WriteLine("Choose an option from the following list:");
+    Console.WriteLine("\ta - Add");
+    Console.WriteLine("\ts - Subtract");
+    Console.WriteLine("\tm - Multiply");
+    Console.WriteLine("\td - Divide");
+    Console.Write("Your option? ");
+
+   
+    switch (Console.ReadLine())
+    {
+        case "a":
+            Console.WriteLine("Your result: {num1} + {num2} = " + (num1 + num2));
+            break;
+        case "s":
+            Console.WriteLine("Your result: {num1} - {num2} = " + (num1 - num2));
+            break;
+        case "m":
+            Console.WriteLine("Your result: {num1} * {num2} = " + (num1 * num2));
+            break;
+        case "d":
+            Console.WriteLine("Your result: {num1} / {num2} = " + (num1 / num2));
+            break;
+    }
+    
+    Console.Write("Press any key to close the Calculator console app...");
+    Console.ReadKey();
+
+}
+}
+
+
+
+
+/*2.	Accept average marks of five students. Display the highest marks obtained.*/
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HighestMarks
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] marks = new int[5];
+            int highest=0;
+            for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Enter average marks of {0} Student: ",i+1);
+                marks[i]=Convert.ToInt32(Console.ReadLine());
+                if (i == 0)
+                {
+                    highest=marks[0];
+                }
+                else if (max<marks[i])
+                {
+                    highest=marks[i];
+                }
+            }
+            Console.WriteLine("Highest marks obtained {0}",highest);
+        }
+    }
+}
+
+
+/*3.	Write a static method to accept param array of integers. 
+The method should find the sum of all the integers passed and display the result. Write a client program to call the method..*/
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CallMethod
+{
+    internal class Program
+    {
+        static void ClientMethod(int[] integer)
+        {
+            int sum=0;
+            for (int i = 0; i < integer.Length; i++)
+                sum += integer[i];
+            Console.WriteLine("Sum of all integers {0}", sum);
+        }
+        static void Main(string[] args)
+        {
+            int[] integer = new int[5];
+            for (int i = 0; i < integer.Length; i++)
+                integer[i] = Convert.ToInt32(Console.ReadLine());
+            ClientMethod(integer);
+        }
+    }
+}   
+
+
+
+/*4.	Write a method to swap two integers. The client code should call the method and print the swapped value.*/
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Swap
+{
+    internal class Program
+    {
+        static void Swap(int a,int b)
+        {
+            a=a+b;
+            b=a-b;
+            a=a-b;
+            Console.WriteLine("A: {0}\nB: {1}",a,b);
+        }
+        static void Main(string[] args)
+        {
+            int a,b;
+            Console.WriteLine("A: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("B: ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Swap(a, b);
+        }
+    }
+}
+
+
+/*5.	Write a single method that calculates the area and circumference of the circle. 
+The area and circumference should be displayed through the client code.*/
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AreaCircumference
+{
+    internal class Program
+    {
+        static void Solution(float r)
+        {
+            float area, circumference, pi=3.14F;
+            area = pi * r * r;
+            Console.WriteLine("Area of Circle {0}", area);
+            circumference = 2 * pi * r;
+            Console.WriteLine("Circumference of Circle {0}", circumference);
+        }
+        static void Main(string[] args)
+        {
+            float r;
+            Console.WriteLine("Enter Circle Radius: ");
+            r= Single.Parse(Console.ReadLine());
+            Solution(r);
+        }
+    }
+}
+
+
+
+/*6.	Create a structure Book which contains the following members:
+bookId, title, price, bookType
+Type of the book should an enumerated data type with values as Magazine, Novel, ReferenceBook, Miscellaneous. 
+Write a console based application to do the following tasks.*/
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Book
+{
+    internal class Program
+    {
+public class StackException extends Exception
+   {
+      public StackException( String message )
+      {
+   	 super( message );  // Calls Exception's constructor    
+      }
+   }
+
+public interface Stack
+   {
+      public void push( int x ) throws StackException;
+      public int  pop ( )       throws StackException;
+   }
+public class ArrayStack implements Stack
+   {
+     
+      public int[] item;
+      public int stackTop;
+    
+      public ArrayStack( int size )
+      {
+   	 item = new int[size];      // Make array
+   	 stackTop = 0;
+      }
+    
+      public void push( int x ) throws StackException
+      {
+   	 if ( stackTop == item.length )
+   	 {
+   	    throw new StackException("Stack overflow");
+   	 }
+    
+   	 item[stackTop] = x;         // Store x in next slot
+   	 stackTop++;                 // Advance one slot location
+      }
+    
+      public int  pop ( ) throws StackException
+      {
+   	 int returnItem;
+   
+   	 if ( stackTop == 0 )
+   	 {
+   	    throw new StackException("Stack underflow");
+   	 }
+    
+   	 returnItem = item[ stackTop-1 ];   // Get last stored item
+   	 stackTop--;                        // Back up one slot location
+    
+   	 return returnItem;
+      }
+   }
+
+
+ public static void main( String[] args )
+   {
+      int   x;
+      Stack s;
+
+      s = new ArrayStack( 6 );    // Will cause underflow
+
+      try
+      {
+         x = 4; s.push(x); System.out.println("push(" + x + ");");      
+         x = 7; s.push(x); System.out.println("push(" + x + ");");
+         x = 8; s.push(x); System.out.println("push(" + x + ");");
+         x = 9; s.push(x); System.out.println("push(" + x + ");");
+
+         x = s.pop(); System.out.println("pop() ---> " + x );
+         x = s.pop(); System.out.println("pop() ---> " + x );
+         x = s.pop(); System.out.println("pop() ---> " + x );
+         x = s.pop(); System.out.println("pop() ---> " + x );
+         x = s.pop(); System.out.println("pop() ---> " + x );
+      }
+      catch ( StackException e )
+      {
+         System.out.println("Error detected: " + e.getMessage() );
+         System.exit(1);
+      }
+   }
