@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HighestMarks
+namespace _1Calc
 {
     internal class Program
     {
@@ -72,7 +72,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HighestMarks
+namespace _1HighestMarks
 {
     internal class Program
     {
@@ -110,7 +110,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CallMethod
+namespace _1CallMethod
 {
     internal class Program
     {
@@ -142,7 +142,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Swap
+namespace _1Swap
 {
     internal class Program
     {
@@ -176,7 +176,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AreaCircumference
+namespace _1AreaCircumference
 {
     internal class Program
     {
@@ -212,86 +212,77 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book
+namespace _1BookApp
 {
-    internal class Program
+   struct Book
     {
-public class StackException extends Exception
-   {
-      public StackException( String message )
-      {
-   	 super( message );  // Calls Exception's constructor    
-      }
-   }
+        int BookId;
+        string Title;
+        double Price;
+        
 
-public interface Stack
-   {
-      public void push( int x ) throws StackException;
-      public int  pop ( )       throws StackException;
-   }
-public class ArrayStack implements Stack
-   {
-     
-      public int[] item;
-      public int stackTop;
-    
-      public ArrayStack( int size )
-      {
-   	 item = new int[size];      // Make array
-   	 stackTop = 0;
-      }
-    
-      public void push( int x ) throws StackException
-      {
-   	 if ( stackTop == item.length )
-   	 {
-   	    throw new StackException("Stack overflow");
-   	 }
-    
-   	 item[stackTop] = x;         // Store x in next slot
-   	 stackTop++;                 // Advance one slot location
-      }
-    
-      public int  pop ( ) throws StackException
-      {
-   	 int returnItem;
-   
-   	 if ( stackTop == 0 )
-   	 {
-   	    throw new StackException("Stack underflow");
-   	 }
-    
-   	 returnItem = item[ stackTop-1 ];   // Get last stored item
-   	 stackTop--;                        // Back up one slot location
-    
-   	 return returnItem;
-      }
-   }
+        enum BookType
+        {
+            Magazine,
+            Novel,
+            ReferenceBook,
+            Miscellaneous
+        }
+        public void AcceptDetails()
+        {
+            Console.WriteLine("Enter The BookId:");
+            BookId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter The Title :");
+            Title = Console.ReadLine();
+            Console.WriteLine("Enter The Book Price :");
+            Price = Convert.ToDouble(Console.ReadLine());
+            
+        }
+        public void DisplayDetails()
+        {
+            Console.WriteLine("Select Booktype:  Magazine or Novel or ReferenceBook or Miscellaneous");
+            string c = Console.ReadLine();
+            if (c == "Magazine")
+            {
+                Console.WriteLine("The BookId:" + BookId);
+                Console.WriteLine("The Title Of The Book is :" + Title);
+                Console.WriteLine("The Price Of The Book is :" + Price);
+                Console.WriteLine("The BookType is :" + BookType.Magazine);
+            }
+            else if (c=="Novel")
+            {
+                Console.WriteLine("The BookId:" + BookId);
+                Console.WriteLine("The Title Of The Book is :" + Title);
+                Console.WriteLine("The Price Of The Book is :" + Price);
+                Console.WriteLine("The BookType is :" + BookType.Novel);
+            }
+            else if (c == "ReferenceBook")
+            {
+                Console.WriteLine("The BookId:" + BookId);
+                Console.WriteLine("The Title Of The Book is :" + Title);
+                Console.WriteLine("The Price Of The Book is :" + Price);
+                Console.WriteLine("The BookType is :" + BookType.ReferenceBook);
+            }
+            else if (c == "Miscellaneous")
+            {
+                Console.WriteLine("The BookId:" + BookId);
+                Console.WriteLine("The Title Of The Book is :" + Title);
+                Console.WriteLine("The Price Of The Book is :" + Price);
+                Console.WriteLine("The BookType is :" + BookType.Miscellaneous);
+            }
+            else
+            {
+                Console.WriteLine("Check Spelling of BookType");
+                    }
+        }
 
-
- public static void main( String[] args )
-   {
-      int   x;
-      Stack s;
-
-      s = new ArrayStack( 6 );    // Will cause underflow
-
-      try
-      {
-         x = 4; s.push(x); System.out.println("push(" + x + ");");      
-         x = 7; s.push(x); System.out.println("push(" + x + ");");
-         x = 8; s.push(x); System.out.println("push(" + x + ");");
-         x = 9; s.push(x); System.out.println("push(" + x + ");");
-
-         x = s.pop(); System.out.println("pop() ---> " + x );
-         x = s.pop(); System.out.println("pop() ---> " + x );
-         x = s.pop(); System.out.println("pop() ---> " + x );
-         x = s.pop(); System.out.println("pop() ---> " + x );
-         x = s.pop(); System.out.println("pop() ---> " + x );
-      }
-      catch ( StackException e )
-      {
-         System.out.println("Error detected: " + e.getMessage() );
-         System.exit(1);
-      }
-   }
+        public static void Main()
+        {
+            Book b1 = new Book();
+            b1.AcceptDetails();
+            b1.DisplayDetails();
+            Console.ReadKey();
+        }
+    }
+    
+}
