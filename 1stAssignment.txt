@@ -1,9 +1,6 @@
-/*1.	Write a Simple console Application Calculator with the help of Visual Studio .NET IDE which will perform following operations on two numbers:
-a.	Addition.
-b.	Subtraction.
-c.	Multiplication.
-d.	Division */
+ASSIGNMENT 1......
 
+Program 1 :
 
 using System;
 using System.Collections.Generic;
@@ -11,129 +8,158 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1Calc
+namespace _1IntoductiontoCsharpAssignment
 {
-    internal class Program
-    {
-    static void Main(string[] args)
-    {
-        int num1,num2;
-        Console.WriteLine("Console Calculator in C#\r");
-    Console.WriteLine("------------------------\n");
-
-    
-    Console.WriteLine("Type a number, and then press Enter");
-    num1 = Convert.ToInt32(Console.ReadLine());
-
-    
-    Console.WriteLine("Type another number, and then press Enter");
-    num2 = Convert.ToInt32(Console.ReadLine());
-
-    
-    Console.WriteLine("Choose an option from the following list:");
-    Console.WriteLine("\ta - Add");
-    Console.WriteLine("\ts - Subtract");
-    Console.WriteLine("\tm - Multiply");
-    Console.WriteLine("\td - Divide");
-    Console.Write("Your option? ");
-
-   
-    switch (Console.ReadLine())
-    {
-        case "a":
-            Console.WriteLine("Your result: {num1} + {num2} = " + (num1 + num2));
-            break;
-        case "s":
-            Console.WriteLine("Your result: {num1} - {num2} = " + (num1 - num2));
-            break;
-        case "m":
-            Console.WriteLine("Your result: {num1} * {num2} = " + (num1 * num2));
-            break;
-        case "d":
-            Console.WriteLine("Your result: {num1} / {num2} = " + (num1 / num2));
-            break;
-    }
-    
-    Console.Write("Press any key to close the Calculator console app...");
-    Console.ReadKey();
-
-}
-}
-
-
-
-
-/*2.	Accept average marks of five students. Display the highest marks obtained.*/
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _1HighestMarks
-{
-    internal class Program
+    class calculator
     {
         static void Main(string[] args)
         {
-            int[] marks = new int[5];
-            int highest=0;
-            for(int i = 0; i < 5; i++)
+            //Reading inputs from the user
+
+            Console.WriteLine("Enter the a value : ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the b value : ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter any opration: + - * /");
+            string c = Console.ReadLine();
+
+            //logic using switch case
+
+            switch (c)
             {
-                Console.WriteLine("Enter average marks of {0} Student: ",i+1);
-                marks[i]=Convert.ToInt32(Console.ReadLine());
-                if (i == 0)
-                {
-                    highest=marks[0];
-                }
-                else if (max<marks[i])
-                {
-                    highest=marks[i];
-                }
+                case "+":
+                    //displaying the output
+                    Console.WriteLine("Addition of two numbers is " + (a + b));
+                    break;
+                case "-":
+                    Console.WriteLine("Subtraction of two numbers is " + (a - b));
+                    break;
+                case "*":
+                    Console.WriteLine("Multiplication of two numbers is " + (a * b));
+                    break;
+                case "/":
+                    Console.WriteLine("Division of two numbers is " + (a / b));
+                    break;
             }
-            Console.WriteLine("Highest marks obtained {0}",highest);
+            Console.ReadKey();
+            /* if (c == "+")
+             {
+                 Console.WriteLine("Addition of two numbers is:" + (a + b));
+             }
+             else if (c == "-")
+             {
+                 Console.WriteLine("Subtraction of two numbers is:" + (a - b));
+             }
+             else if (c == "*")
+             {
+                 Console.WriteLine("Multiplication of two numbers is:" + (a * b));
+             }
+             else if (c == "/")
+             {
+                 Console.WriteLine("Division of two numbers is:" + (a / b));
+             }
+             else
+             {
+                 Console.WriteLine("No operation selected");
+             }
+            */
+
+
+        }
+    }
+
+ }
+
+
+
+Program 2 :
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1IntoductiontoCsharpAssignment
+{
+    class averagemarksofstudents
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Average marks of student1:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Average marks of student2:");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Average marks of student3:");
+            int c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Average marks of student4:");
+            int d = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Average marks of student5:");
+            var e = Convert.ToInt32(Console.ReadLine());
+            int[] array1 = new int[10];
+            array1[0] = a;
+            array1[1] = b;
+            array1[2] = c;
+            array1[3] = d;
+            array1[4] = e;
+
+            /* var list = new List<int>();
+             list.Add(a);
+             list.Add(b);
+             list.Add(b);
+             list.Add(c);
+             list.Add(d);
+             list.Add(e);
+
+             // Iterate list element using foreach loop  
+             foreach (var i in list)
+             {
+                 Console.Write(i + " ");
+             } */
+
+            Console.WriteLine("the highest marks obtained is :" + array1.Max());
+            Console.ReadLine();
+
+        }
+    }
+}
+
+program 3 :
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1IntoductiontoCsharpAssignment
+{
+    class sumofarrayintegers
+    {
+        static void Mymethod()
+        {
+            int[] array = { 1, 2, 3, 4, 5 };
+            int sum1 = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum1 = sum1 + array[i];
+            }
+            Console.WriteLine("the sum of integers is " + sum1);
+
+        }
+        static void Main(string[] args)
+        {
+            Mymethod();
+            Console.ReadKey();
         }
     }
 }
 
 
-/*3.	Write a static method to accept param array of integers. 
-The method should find the sum of all the integers passed and display the result. Write a client program to call the method..*/
 
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _1CallMethod
-{
-    internal class Program
-    {
-        static void ClientMethod(int[] integer)
-        {
-            int sum=0;
-            for (int i = 0; i < integer.Length; i++)
-                sum += integer[i];
-            Console.WriteLine("Sum of all integers {0}", sum);
-        }
-        static void Main(string[] args)
-        {
-            int[] integer = new int[5];
-            for (int i = 0; i < integer.Length; i++)
-                integer[i] = Convert.ToInt32(Console.ReadLine());
-            ClientMethod(integer);
-        }
-    }
-}   
-
-
-
-/*4.	Write a method to swap two integers. The client code should call the method and print the swapped value.*/
+program 4 :
 
 
 using System;
@@ -142,33 +168,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1Swap
+namespace _1IntoductiontoCsharpAssignment
 {
-    internal class Program
+    class Swapping2numbers
     {
-        static void Swap(int a,int b)
+        static void Mymethod()
         {
-            a=a+b;
-            b=a-b;
-            a=a-b;
-            Console.WriteLine("A: {0}\nB: {1}",a,b);
+            int temp;
+            Console.WriteLine("Enter a value");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter b value");
+            int b = Convert.ToInt32(Console.ReadLine());
+            temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("After swapping a = " + a +" b = " + b);
         }
-        static void Main(string[] args)
+        static  void Main(string[] args)
         {
-            int a,b;
-            Console.WriteLine("A: ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("B: ");
-            b = Convert.ToInt32(Console.ReadLine());
-            Swap(a, b);
+            Mymethod();
+            Console.ReadKey();
         }
     }
 }
 
 
-/*5.	Write a single method that calculates the area and circumference of the circle. 
-The area and circumference should be displayed through the client code.*/
-
+program 5 :
 
 using System;
 using System.Collections.Generic;
@@ -176,35 +201,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1AreaCircumference
+namespace _1IntoductiontoCsharpAssignment
 {
-    internal class Program
+    class Areacircumferenceofarea
     {
-        static void Solution(float r)
+       static void Mymethod()
         {
-            float area, circumference, pi=3.14F;
-            area = pi * r * r;
-            Console.WriteLine("Area of Circle {0}", area);
-            circumference = 2 * pi * r;
-            Console.WriteLine("Circumference of Circle {0}", circumference);
-        }
-        static void Main(string[] args)
+
+            double pi = 3.14;
+            Console.WriteLine("Enter the radius value : ");
+            int radius = Convert.ToInt32(Console.ReadLine());
+            double area;
+            area = pi * radius * radius;
+            Console.WriteLine("Area of a circle is :" + area);
+            double area1;
+            area1 = 2 * pi * radius;
+            Console.WriteLine("Circumference of a circle is :" + area1); 
+
+        } 
+        static void Main()
         {
-            float r;
-            Console.WriteLine("Enter Circle Radius: ");
-            r= Single.Parse(Console.ReadLine());
-            Solution(r);
+            Mymethod();
+            Console.ReadKey();
         }
     }
 }
 
 
 
-/*6.	Create a structure Book which contains the following members:
-bookId, title, price, bookType
-Type of the book should an enumerated data type with values as Magazine, Novel, ReferenceBook, Miscellaneous. 
-Write a console based application to do the following tasks.*/
-
+program 6 :
 
 using System;
 using System.Collections.Generic;
@@ -212,7 +237,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1BookApp
+namespace _1IntoductiontoCsharpAssignment
 {
    struct Book
     {
