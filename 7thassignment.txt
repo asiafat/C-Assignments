@@ -14,11 +14,11 @@ namespace fileIO
     {
         static void Main(string[] args)
         {
-            string dir = @"C:\Sameer\FileIO";
-            string subdir1 = @"C:\Sameer\FileIO\Write";
-            string subdir2 = @"C:\Sameer\FileIO\Read";
-            string srcFilepath = @"C:\Sameer\FileIO\Write\myFile.txt";
-            string desFilepath = @"C:\Sameer\FileIO\Read\myFile.txt";
+            string dir = @"C:\Asia\FileIO";
+            string subdir1 = @"C:\Asia\FileIO\Write";
+            string subdir2 = @"C:\Asia\FileIO\Read";
+            string srcFilepath = @"C:\Asia\FileIO\Write\myFile.txt";
+            string desFilepath = @"C:\Asia\FileIO\Read\myFile.txt";
             Directory.CreateDirectory(dir);
             Directory.CreateDirectory(subdir1);
             Directory.CreateDirectory(subdir2);
@@ -26,7 +26,7 @@ namespace fileIO
             DirectoryInfo ds = new DirectoryInfo(subdir2);
             //create file and write
             FileStream fs = File.Create(srcFilepath);
-            string[] lines = { "Syed Sameer", "sameersyed@gmail.com", "Bangalore" };
+            string[] lines = { "Asia", "asiafatima@gmail.com", "Bangalore" };
             StreamWriter sw = new StreamWriter(fs);
             foreach (string s in lines)
             {
@@ -77,8 +77,8 @@ namespace fileIO
         static void Main(string[] args)
         {
 
-            string dir = @"C:\Sameer1\BankAccountDetails";
-            string srcFilepath = @"C:\Sameer1\BankAccountDetails\Account.txt";
+            string dir = @"C:\Asia1\BankAccountDetails";
+            string srcFilepath = @"C:\Asia1\BankAccountDetails\Account.txt";
             Directory.CreateDirectory(dir);
 
           //create file and write
@@ -399,8 +399,8 @@ namespace _7FileInputandOutput
     {
         static void Main(string[] args)
         {
-            string dir = @"C:\Sameer2\FileIO\Write";
-            string srcFilepath = @"C:\Sameer2\FileIO\Write\myFile.txt";
+            string dir = @"C:\Asia2\FileIO\Write";
+            string srcFilepath = @"C:\Asia2\FileIO\Write\myFile.txt";
             Directory.CreateDirectory(dir);
             employee emp1 = new employee
             {
