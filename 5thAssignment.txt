@@ -182,19 +182,19 @@ namespace _5GenericCollections
             Employee emp1 = new Employee()
             {
                 Id = 1,
-                Name = "Rehaman",
+                Name = "Fathima",
                 salary = 40000
             };
             Employee emp2 = new Employee()
             {
                 Id = 2,
-                Name = "Sameer",
+                Name = "Asia",
                 salary = 35000
             };
             Employee emp3 = new Employee()
             {
                 Id = 3,
-                Name = "Suresh",
+                Name = "Zara",
                 salary = 45000
             };
             empList.Add(emp1);
